@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Error 404</title>
+    <link rel="stylesheet" href="/comp/homepage/kaixin.css">
+ 
+        
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation active">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="logo-apple"></ion-icon>
+                        </span>
+                        <span class="title">Brand Name</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-btn">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">
+                            Ward 
+                            <ion-icon name="chevron-down-outline" style="margin-left: 8px; font-size: 1.1rem; vertical-align: middle;"></ion-icon>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://example.com/1" target="_blank"><span class="title">Ward 1</span></a></li>
+                        <li><a href="https://example.com/2" target="_blank"><span class="title">Ward 2</span></a></li>
+                        <li><a href="https://example.com/3" target="_blank"><span class="title">Ward 3</span></a></li>
+                        <li><a href="https://example.com/4" target="_blank"><span class="title">Ward 4</span></a></li>
+                        <li><a href="https://example.com/5" target="_blank"><span class="title">Ward 5</span></a></li>
+                    <li><a href="https://example.com/6" target="_blank"><span class="title">Ward 6</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="resetDatabase()">
+                        <span class="icon">
+                            <ion-icon name="trash-outline"></ion-icon>
+                        </span>
+                        <span class="title">Reset All Users</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main active">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                
+                <div class="user">
+                    <a href="/comp/login/login.html" target="_blank">
+                        <img src="/images/A.png" alt="User Profile">
+                    </a>
+                </div>
+            </div>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,504</div>
+                        <div class="cardName">Recordings</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Number of Doctors</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">284</div>
+                        <div class="cardName">Rooms Available</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">$7,842</div>
+                        <div class="cardName">Earning</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="cash-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Medical Reports</h2>
+                        <button class="btn btn-danger" onclick="clearAllRows()">Clear All</button>
+                    </div>
+
+                    <form id="recordForm" class="record-form">
+                        <input type="text" id="patientName" placeholder="Patient Name" required>
+                        <input type="text" id="reportType" placeholder="Report Type" required>
+                        <select id="ambulanceStatus" required>
+                            <option value="" disabled selected>Ambulance</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <select id="patientStatus" required>
+                            <option value="" disabled selected>Status</option>
+                            <option value="pending">Admitted</option>
+                            <option value="inProgress">Stable</option>
+                            <option value="return">Critical</option>
+                            <option value="delivered">Discharged</option>
+                        </select>
+                        <button type="submit">Add Record</button>
+                    </form>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Patient Name</td>
+                                <td>Report Type</td>
+                                <td>Ambulance</td>
+                                <td>Status</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recordTableBody">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="recentCustomers">
+                    <div class="cardHeader">
+                        <h2>Recent Patients</h2>
+                    </div>
+
+                    <table>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt="Profile picture of David"></div>
+                            </td>
+                            <td>
+                                <h4>David <br> <span>Italy</span></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt="Profile picture of Amit"></div>
+                            </td>
+                            <td>
+                                <h4>Amit <br> <span>India</span></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt="Profile picture of David"></div>
+                            </td>
+                            <td>
+                                <h4>David <br> <span>Italy</span></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt="Profile picture of Amit"></div>
+                            </td>
+                            <td>
+                                <h4>Amit <br> <span>India</span></h4>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/comp/homepage/kaicin.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

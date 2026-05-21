@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0effe 0%, #ffffff 50%, #e8e6fb 100%);
+}
+
+/* Decorative Circles */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #2a2185;
+}
+
+.circle-1 {
+  top: -80px; 
+  left: -80px; 
+  width: 256px; 
+  height: 256px; 
+  opacity: 0.2;
+}
+
+.circle-2 {
+  bottom: -60px; 
+  right: -60px; 
+  width: 208px; 
+  height: 208px; 
+  opacity: 0.15;
+}
+
+.circle-3 {
+  top: 50%; 
+  left: -40px; 
+  width: 96px; 
+  height: 96px; 
+  opacity: 0.1; 
+  transform: translateY(-50%);
+}
+
+.circle-4 {
+  top: 40px; 
+  right: 80px; 
+  width: 64px; 
+  height: 64px; 
+  opacity: 0.1;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.025em;
+  color: #2a2185;
+}
+
+.box-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8rem;
+}
+
+.box-link {
+  width: 96px;
+  height: 96px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a2185;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  
+  /* Starting state for animation */
+  opacity: 0;
+  transform: translateY(15px);
+  
+  /* Entry animation and hover transition */
+  animation: fadeSlideUp 0.35s ease-out forwards;
+  transition: transform 0.2s ease-in-out, opacity 0.35s ease-out;
+}
+
+.box-link:hover {
+  transform: scale(1.1) !important;
+}
+
+.box-number {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.top-left-btn {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 20; /* Ensures it stays above the circles */
+  background-color: #2a2185;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, background-color 0.2s;
+}
+
+.top-left-btn:hover {
+  transform: scale(1.05);
+  background-color: #1f1863; /* Slightly darker purple on hover */
+}
+
+/* Keyframes to mimic Framer Motion's initial/animate props */
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
